@@ -8,8 +8,10 @@ function NavBar() {
 
   useEffect(()=>{
        axios.get(`https://api.themoviedb.org/3/trending/all/week?api_key=${API_KEY}&language=en-US`).then((response)=>{
+        const results=response.data.results
+        const randomintex=Math.floor(Math.random() * results.length);
         console.log(response.data.results[5])
-        setMovie(response.data.results[5])
+        setMovie(response.data.results[randomintex])
       });
     }, []);
   
