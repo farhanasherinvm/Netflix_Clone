@@ -9,7 +9,13 @@
     right: 20px;
     top: 20px;
 }
-
+.navbar{
+  background-size: cover;
+  background-position: center;
+  height: 70vh;
+  width: 100%;
+  color: white;
+}
   .tittle{
     font-size: 3rem;
     font-weight: 800;
