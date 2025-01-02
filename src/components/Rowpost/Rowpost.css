@@ -7,11 +7,11 @@
 .row{
    margin-left: 20px;
 }
-.poster{
+.posters{
    display: flex;
    overflow-x: scroll;
    overflow-y: hidden;
 }
-.poster::-webkit-scrollbar{
+.posters::-webkit-scrollbar{
    display: none;
 }
