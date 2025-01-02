@@ -1,5 +1,5 @@
-.post{
-   padding-top: 50px;
+.poster{
+  
    max-height: 250px;
    margin-right: 10px;
    
@@ -14,4 +14,9 @@
 }
 .posters::-webkit-scrollbar{
    display: none;
+}
+.smallposter{
+   max-height: 150px;
+   margin-right: 10px;
+
 }
