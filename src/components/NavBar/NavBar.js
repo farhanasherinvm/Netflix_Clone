@@ -24,13 +24,14 @@ function NavBar() {
        <img className='logo' src={logo} alt="Site logo" />
        <img className='avathar' src='https://i.pinimg.com/originals/0d/dc/ca/0ddccae723d85a703b798a5e682c23c1.png' alt='avathar'/>
        <div className='content'>
-       <h1 className='tittle'>{movie?.name || movie?.title ||'Loading...'}</h1>
+          <h1 className='tittle'>{movie?.name || movie?.title ||'Loading...'}</h1>
 
           <div className='buttons'>
             <button className='button'>play</button>
             <button className='button'>my list</button>
           </div>
           <h1 className='discription'>{movie?.overview || ""}</h1>
+          
        </div>
        <div className="fade"></div>
     </div>

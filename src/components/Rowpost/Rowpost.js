@@ -2,9 +2,11 @@ import { useState ,useEffect} from "react";
 import React from "react";
 import "./Rowpost.css";
 import axios from "axios";
-import {baseimageUrl} from '../../constants/constants';
+import Youtube from "react-youtube"
+import {baseimageUrl,API_KEY,baseUrl} from '../../constants/constants';
 function Rowpost(props) {
   const [movies, setmovies]=useState([])
+  const [urlId, seturlId]= useState("")
 
   useEffect(()=>{
 
@@ -17,6 +19,25 @@ function Rowpost(props) {
     })
   },[]);
 
+  const opts = {
+    height: '390',
+    width: '100%',
+    playerVars: {
+      // https://developers.google.com/youtube/player_parameters
+      autoplay: 1,
+    },
+  };
+   const handleMovie=((id)=>{
+       console.log(id)
+       axios.get(`${baseUrl}/movie/${id}/videos?api_key=${API_KEY}`).then(response=>{
+        if (response.data.results!==0){
+          seturlId(response.data.results[0])
+        }else{
+          console.log("Not Available")
+        }
+       })
+   }
+  )
 
   return (
     <div className="row">
@@ -25,12 +46,16 @@ function Rowpost(props) {
       <div className="posters">
         {movies.map((obj)=>
 
-      <img className={props.isSmall? "smallposter":"poster"}src={`${baseimageUrl+obj.backdrop_path}`} alt="poster"/>
-    )}
+      <img onClick={()=>handleMovie(obj.id)} className={props.isSmall? "smallposter":"poster"}src={`${baseimageUrl+obj.backdrop_path}`} alt="poster"/>
+      )}
         
        
       </div>
+      <div className="vedio">
+   {  urlId &&  <Youtube opts={opts} videoId={urlId.key}/>}
+   </div>
     </div>
+    
   );
 }
 

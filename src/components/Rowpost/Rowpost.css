@@ -2,7 +2,11 @@
   
    max-height: 250px;
    margin-right: 10px;
+   cursor: pointer;
    
+}
+.poster:hover{
+   transform: scale(1.1);
 }
 .row{
    margin-left: 20px;
@@ -11,6 +15,7 @@
    display: flex;
    overflow-x: scroll;
    overflow-y: hidden;
+   
 }
 .posters::-webkit-scrollbar{
    display: none;
@@ -18,5 +23,13 @@
 .smallposter{
    max-height: 150px;
    margin-right: 10px;
+   cursor: pointer;
 
+}
+.smallposter:hover{
+   transform: scale(1.2);
+}
+
+.vedio{
+padding-top: 30px;
 }
